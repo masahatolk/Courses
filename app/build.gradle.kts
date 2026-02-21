@@ -42,6 +42,16 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature-login"))
+    implementation(project(":feature-main"))
+    implementation(project(":feature-favorites"))
+    implementation(project(":feature-account"))
+
+    implementation("io.insert-koin:koin-android:3.5.6")
+    
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

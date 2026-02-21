@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">Вход</string>
+    <string name="email">Email</string>
+    <string name="example_gmail">example@gmail.com</string>
+    <string name="password">Пароль</string>
+    <string name="example_password">Введите пароль</string>
+    <string name="no_account_registration">Нет аккаунта? Регистрация</string>
+    <string name="forgot_password">Забыл пароль</string>
+    <string name="ok_button">ok button</string>
+    <string name="vk_button">vk button</string>
+</resources>
