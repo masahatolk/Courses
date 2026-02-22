@@ -46,6 +46,7 @@ dependencies {
     implementation(project(":feature-main"))
     implementation(project(":feature-favorites"))
     implementation(project(":feature-account"))
+    implementation(project(":core-ui"))
 
     implementation("io.insert-koin:koin-android:3.5.6")
     
