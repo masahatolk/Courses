@@ -9,8 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="background_dark">#151515</color>
+    <color name="background_dark_gray">#24252A</color>
     <color name="background_gray">#32333A</color>
-    <color name="divider_gray">#4D555E</color>
+    <color name="background_light_gray">#4D555E</color>
     <color name="vk_color">#2683ed</color>
     <color name="ok_color_bottom">#F95D00</color>
     <color name="ok_color_top">#F98509</color>

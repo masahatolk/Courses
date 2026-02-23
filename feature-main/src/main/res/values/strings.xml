@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main">Главная</string>
+    <string name="favorites">Избранное</string>
+    <string name="account">Аккаунт</string>
+    <string name="search_courses">Search courses...</string>
+    <string name="sort_parameter">По дате добавления</string>
+    <string name="filter_button">filter button</string>
+</resources>

@@ -14,7 +14,16 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:theme="@style/Theme.Courses">
+            <intent-filter>
+                <action android:name="com.hits.app.OPEN_MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.hits.feature.login.ui.LoginActivity"
+            android:exported="true"
             android:theme="@style/Theme.Courses">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
