@@ -17,5 +17,7 @@
     <color name="ok_color_top">#F98509</color>
     <color name="green">#12B956</color>
     <color name="text_white">#F2F2F3</color>
+    <color name="text_white_transparent">#B3F2F2F3</color>
     <color name="text_gray">#7FF2F2F3</color>
+    <color name="badge_transparent">#B6525252</color>
 </resources>

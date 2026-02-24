@@ -28,6 +28,18 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
+    <style name="TextCourseTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextCourseDescription">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_white_transparent</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
     <style name="TextRegular">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/green</item>
@@ -46,6 +58,8 @@
 
         <item name="android:textColorHint">@color/text_gray</item>
         <item name="android:textColor">@color/text_white</item>
+
+        <item name="android:textCursorDrawable">@color/text_white</item>
 
         <item name="android:gravity">center_vertical</item>
 

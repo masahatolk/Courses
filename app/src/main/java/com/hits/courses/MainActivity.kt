@@ -3,7 +3,7 @@ package com.hits.courses
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.hits.courses.databinding.ActivityMainBinding
+import com.hits.feature.main.databinding.ActivityMainBinding
 import com.hits.feature.main.ui.MainFragment
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MainFragment())
+                .replace(com.hits.feature.main.R.id.fragment_container, MainFragment())
                 .commit()
         }
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, selectedFragment)
+                .replace(com.hits.feature.main.R.id.fragment_container, selectedFragment)
                 .commit()
 
             true
