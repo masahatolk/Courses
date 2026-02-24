@@ -6,8 +6,8 @@
         <item name="colorPrimaryVariant">@color/green</item>
         <item name="colorOnPrimary">@color/text_white</item>
 
-        <item name="colorSecondary">@color/background_dark_gray</item>
-        <item name="colorOnSecondary">@color/background_dark_gray</item>
+        <item name="colorSecondary">@color/text_white</item>
+        <item name="colorOnSecondary">@color/text_white</item>
 
         <item name="android:windowBackground">@color/background_dark</item>
 
@@ -74,8 +74,23 @@
         <item name="android:backgroundTint">@color/background_gray</item>
     </style>
 
-    <style name="Button" parent="Widget.Material3.Button">
+    <style name="ButtonGreen" parent="Widget.Material3.Button">
         <item name="android:background">@drawable/button_green</item>
+        <item name="android:backgroundTint">@color/green</item>
+
+        <item name="android:textColor">@color/text_white</item>
+
+        <item name="android:textSize">18sp</item>
+
+        <item name="android:fontFamily">sans-serif-medium</item>
+
+        <item name="textAllCaps">false</item>
+
+    </style>
+
+    <style name="ButtonGray" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/button_gray</item>
+        <item name="android:backgroundTint">@color/background_dark_gray</item>
 
         <item name="android:textColor">@color/text_white</item>
 
