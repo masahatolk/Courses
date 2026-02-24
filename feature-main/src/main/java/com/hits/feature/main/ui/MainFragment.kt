@@ -3,6 +3,7 @@ package com.hits.feature.main.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.hits.feature.main.R
 import com.hits.feature.main.databinding.FragmentMainBinding
 import com.hits.feature.main.ui.adapter.CourseAdapter
@@ -28,6 +29,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             },
             onLikeClick = { viewModel.toggleLike(it) }
         )
+
+        binding.coursesRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext())
 
         binding.coursesRecyclerView.adapter = adapter
 

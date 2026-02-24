@@ -15,7 +15,7 @@ class MainViewModel(
     private val _courses = MutableLiveData<List<CourseUiModel>>()
     val courses: LiveData<List<CourseUiModel>> = _courses
 
-    private val likedIds = mutableSetOf<String>()
+    private val likedIds = mutableSetOf<Int>()
 
     init {
         loadCourses()
@@ -55,7 +55,7 @@ class MainViewModel(
     private fun sortDesc(list: List<CourseUiModel>) =
         list.sortedByDescending { it.publishDate }
 
-    private fun MutableSet<String>.toggle(id: String) {
+    private fun MutableSet<Int>.toggle(id: Int) {
         if (contains(id)) remove(id) else add(id)
     }
 }

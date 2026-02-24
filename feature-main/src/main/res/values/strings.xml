@@ -13,4 +13,13 @@
     <string name="detail">Подробнее</string>
     <string name="price_example">999 ₽</string>
     <string name="detail_icon">detail icon</string>
+    <string name="start_course">Начать курс</string>
+    <string name="go_to_platform">Перейти на платформу</string>
+    <string name="course_title_example">Java-разработчик с нуля</string>
+    <string name="about_course">О курсе</string>
+    <string name="about_course_description">У вас будет 7 видеоуроков в высоком качестве. На них спикер объясняет теорию и показывает как выполнять практические задания. Доступ к материалам сохраняется на 2 года Кроме теоретических материалов вас ждут тесты и практические задания. Они помогут лучше запомнить новую информацию и прокачать навыки, которые необходимы для реальной работы с RabbitMQ.</string>
+    <string name="author">Автор</string>
+    <string name="merion_academy">Merion Academy</string>
+    <string name="back_arrow">back arrow</string>
+    <string name="add_to_favorites">add to favorites</string>
 </resources>

@@ -3,7 +3,7 @@ package com.hits.domain.usecase
 import com.hits.domain.repository.CourseRepository
 
 class GetCoursesUseCase(
-    private val repo: CourseRepository
+    private val repository: CourseRepository
 ) {
-    suspend operator fun invoke() = repo.getCourses()
+    suspend operator fun invoke() = repository.getCourses()
 }
