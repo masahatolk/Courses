@@ -11,6 +11,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.hits.feature.login.databinding.ActivityLoginBinding
 import kotlinx.coroutines.flow.collectLatest
+import androidx.core.net.toUri
 
 class LoginActivity : AppCompatActivity() {
 
@@ -74,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun openUrl(url: String) {
         try {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            val intent = Intent(Intent.ACTION_VIEW, url.toUri())
             startActivity(intent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(this, "Нет приложения для открытия ссылки", Toast.LENGTH_SHORT).show()
