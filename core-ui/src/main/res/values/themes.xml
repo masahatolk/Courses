@@ -119,4 +119,13 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="ShapeAppearance.SettingsCard" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="ItemMenu" >
+        <item name="background">@color/background_gray</item>
+    </style>
 </resources>
