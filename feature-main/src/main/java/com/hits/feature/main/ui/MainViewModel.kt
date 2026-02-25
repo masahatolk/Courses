@@ -7,20 +7,23 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hits.domain.usecase.GetCoursesUseCase
+import com.hits.domain.usecase.ObserveFavoriteIdsUseCase
+import com.hits.domain.usecase.ToggleFavoriteUseCase
 import com.hits.feature.main.ui.adapter.CourseUiModel
+import com.hits.feature.main.ui.adapter.toDomain
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
 class MainViewModel(
-    private val getCourses: GetCoursesUseCase
+    private val getCourses: GetCoursesUseCase,
+    private val observeFavoriteIds: ObserveFavoriteIdsUseCase,
+    private val toggleFavorite: ToggleFavoriteUseCase
 ) : ViewModel() {
 
     private val _courses = MutableLiveData<List<CourseUiModel>>()
     val courses: LiveData<List<CourseUiModel>> = _courses
-
-    private val likedIds = mutableSetOf<Int>()
 
     init {
         loadCourses()
@@ -28,35 +31,29 @@ class MainViewModel(
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun loadCourses() = viewModelScope.launch {
-        val result = getCourses()
+        val allCourses = getCourses()
 
-        val mapped = result.map {
-            CourseUiModel(
-                id = it.id,
-                title = it.title,
-                description = it.text,
-                price = "${it.price} ₽",
-                rating = it.rate,
-                startDate = it.startDate,
-                publishDate = it.publishDate,
-                isLiked = it.hasLike
-            )
+        observeFavoriteIds().collect { likedIds ->
+            val mapped = allCourses.map { domainModel ->
+                CourseUiModel(
+                    id = domainModel.id,
+                    title = domainModel.title,
+                    description = domainModel.text,
+                    price = domainModel.price,
+                    rating = domainModel.rate,
+                    startDate = domainModel.startDate,
+                    publishDate = domainModel.publishDate,
+                    isLiked = likedIds.contains(domainModel.id)
+                )
+            }
+            _courses.value = sortDesc(mapped)
         }
-
-        _courses.value = sortDesc(mapped)
     }
 
     fun toggleLike(course: CourseUiModel) {
-        likedIds.toggle(course.id)
-
-        _courses.value = _courses.value?.map {
-            if (it.id == course.id) it.copy(isLiked = !it.isLiked) else it
+        viewModelScope.launch {
+            toggleFavorite(course.toDomain(), course.isLiked)
         }
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun sortByDate() {
-        _courses.value = _courses.value?.let { sortDesc(it) }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -65,7 +62,8 @@ class MainViewModel(
         return list.sortedByDescending { LocalDate.parse(it.publishDate, formatter) }
     }
 
-    private fun MutableSet<Int>.toggle(id: Int) {
-        if (contains(id)) remove(id) else add(id)
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun sortByDate() {
+        _courses.value = _courses.value?.let { sortDesc(it) }
     }
 }

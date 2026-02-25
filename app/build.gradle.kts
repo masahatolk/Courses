@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp) apply false
 }
 
 android {
@@ -48,6 +49,8 @@ dependencies {
     implementation(project(":feature-favorites"))
     implementation(project(":feature-account"))
     implementation(project(":core-ui"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation("io.insert-koin:koin-android:3.5.6")
     

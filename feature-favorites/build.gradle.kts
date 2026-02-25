@@ -32,12 +32,20 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(project(":domain"))
     implementation(project(":core-ui"))
 
+    implementation(project(":feature-main"))
+
+    implementation("io.insert-koin:koin-android:3.5.6")
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

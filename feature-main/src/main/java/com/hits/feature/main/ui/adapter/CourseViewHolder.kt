@@ -16,19 +16,17 @@ class CourseViewHolder(
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun bind(item: CourseUiModel) = with(binding) {
-
         title.text = item.title
         description.text = item.description
         price.text = item.price
         rating.text = item.rating
         date.text = formatDateToReadable(item.startDate)
 
-        favorite.setColorFilter(
-            ContextCompat.getColor(
-                root.context,
-                if (item.isLiked) R.color.green else android.R.color.white
-            )
-        )
+        val iconRes = if (item.isLiked) R.drawable.favorite_filled else R.drawable.favorites
+        val tintColor = if (item.isLiked) R.color.green else android.R.color.white
+
+        favorite.setImageResource(iconRes)
+        favorite.setColorFilter(ContextCompat.getColor(root.context, tintColor))
 
         root.setOnClickListener { onClick(item) }
         favorite.setOnClickListener { onLikeClick(item) }

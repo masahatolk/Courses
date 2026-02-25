@@ -1,7 +1,9 @@
 package com.hits.feature.main.ui.adapter
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.hits.feature.main.databinding.CourseItemBinding
@@ -20,6 +22,7 @@ class CourseAdapter(
         return CourseViewHolder(binding, onClick, onLikeClick)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
