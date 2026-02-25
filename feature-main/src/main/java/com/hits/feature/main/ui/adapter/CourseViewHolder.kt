@@ -18,7 +18,7 @@ class CourseViewHolder(
     fun bind(item: CourseUiModel) = with(binding) {
         title.text = item.title
         description.text = item.description
-        price.text = item.price
+        "${item.price} ₽".also { price.text = it }
         rating.text = item.rating
         date.text = formatDateToReadable(item.startDate)
 
